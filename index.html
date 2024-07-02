@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Academy</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/5683bb55ee.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!--website header and logo-->
+    <header>
+        <div class="header-left">Overview of Web Academy</div>
+        <div class="header-right"><img src="Images/logo.png" alt="Logo" class="logo"></div>
+    </header>
+
+    <div class="container">
+        <!--course menu sidebar-->
+        <div class="sidebar" id="sidebar">
+            <div class="menu-title">
+                COURSE MENU
+                <span class="lock-icon" id="lockIcon" title="Toggle Course Menu Height" onclick="toggleLock()">🔓</span>
+            </div>
+            <div class="dropdown-content">
+                <div class="category">
+                    <button onclick="toggleTopics('category1Topics')" class="categorybtn">📁 HTML, CSS, JS Basics</button>
+                    <div id="category1Topics" class="topics">
+                        <a href="#" onclick="showVideo('Videos/vid1.mp4')">👋 Welcome !</a>
+                        <a href="#" onclick="showVideo('Videos/vid2.mp4')">▶️ HTML part-1</a>
+                        <a href="#" onclick="showVideo('Videos/vid3.mp4')">▶️ HTML part-2</a>
+                        <a href="#" onclick="showQuiz('quiz1')">📝 Quiz 1</a>
+                        <a href="#" onclick="showVideo('Videos/vid4.mp4')">▶️ HTML part-3</a>
+                        <a href="#" onclick="showQuiz('quiz2')">📝 Quiz 2</a>
+                        <a href="#" onclick="showVideo('Videos/vid5.mp4')">▶️ CSS part-1</a>
+                        <a href="#" onclick="showVideo('Videos/vid6.mp4')">▶️ CSS part-2</a>
+                        <a href="#" onclick="showQuiz('quiz3')">📝 Quiz 3</a>
+                        <a href="#" onclick="showMap('Images/map.png')">📌 Web Academy Locations</a>
+                        <a href="#" onclick="showVideo('Videos/vid7.mp4')">▶️ CSS part-3</a>
+                        <a href="#" onclick="showVideo('Videos/vid8.mp4')">▶️ CSS part-4</a>
+                        <a href="#" onclick="showVideo('Videos/vid9.mp4')">▶️ CSS part-5</a>
+                        <a href="#" onclick="showQuiz('quiz4')">📝 Quiz 4</a>
+                        <a href="#" onclick="showVideo('Videos/vid10.mp4')">▶️ JS part-1</a>
+                        <a href="#" onclick="showVideo('Videos/vid11.mp4')">▶️ JS part-2</a>
+                        <a href="#" onclick="showVideo('Videos/vid12.mp4')">▶️ JS part-3</a>
+                        <a href="#" onclick="showQuiz('quiz5')">📝 Quiz 5</a>
+                    </div>
+                </div>
+                <div class="category">
+                    <button onclick="toggleTopics('category2Topics')" class="categorybtn">📁 Github</button>
+                    <div id="category2Topics" class="topics">
+                        <a href="#" onclick="showVideo('Videos/vid13.mp4')">▶️ Intro to Github</a>
+                        <a href="#" onclick="showVideo('Videos/vid14.mp4')">▶️ Conclusion</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--course content and activities-->
+        <div class="main-content" id="mainContent">
+            <!--video content-->
+            <video id="courseVideo" src="Videos/vid1.mp4" class="video" controls ></video>
+            <!--quiz content-->
+            <div id="quizContainer" class="quiz-container" style="display: none;">
+                <h2 id="quizTitle">Quiz</h2>
+                <form id="quizForm">
+                    <div class="quiz-question">
+                        <p>Question will appear here</p>
+                        <div class="options-list">
+                            <label><input type="radio" name="option" value="A"> Option A</label><br>
+                            <label><input type="radio" name="option" value="B"> Option B</label><br>
+                            <label><input type="radio" name="option" value="C"> Option C</label><br>
+                            <label><input type="radio" name="option" value="D"> Option D</label><br>
+                        </div>
+                    </div>
+                    <button class="submit-btn" id="submitButton" type="button" onclick="submitQuiz()" disabled>Submit</button>
+                </form>
+                 <!--custom alert for quiz's answer-->
+                <div class="custom-alert" id="customAlert">
+                    <div class="alert-content">
+                        <p id="alertMessage">alert message</p>
+                        <button onclick="closeAlert()">close</button>
+                    </div>
+                </div>
+            </div>
+            <!--map content-->
+            <div id="mapContainer" class="map-container" style="display: none;">
+                <h2 id="mapTitle">This is an interactive map to view the locations of Web Academy across the Kingdom of Saudi Arabia</h2>
+                <div class="locations">
+                    <button class="kids-btn" onclick=" showLocation('kids')"><i class="fa-solid fa-location-dot"></i> Web Academy for Kids</button>
+                    <button class="expert-btn" onclick=" showLocation('expert')"><i class="fa-solid fa-location-dot"></i> Web Academy for Expert</button>
+                    <button class="all-btn" onclick=" showLocation('all')"><i class="fa-solid fa-location-dot"></i> Show All</button>
+                </div>
+                <div class="map-content"> 
+                    <img id="mapImg" class="map-Img" src="Images/map.svg" alt="Saudi Arabia map" >
+                    <div class="pin kids-loc1" style="top: 28.5%; left: 28.5%;" > <!--Hail pin-->
+                        <i class="fa-solid fa-location-dot fa-lg"  id="kids-loc1" style="color: #da8d00;"></i>
+                    </div>
+                    <div class="pin kids-loc2" style="top: 62%; left: 19%;"> <!--Mecca pin-->
+                        <i class="fa-solid fa-location-dot fa-lg"  id="kids-loc2" style="color: #da8d00;"></i>
+                    </div>
+                    <div class="pin expert-loc1" style="top: 80.3%; left: 29.7%;"> <!--Abha pin-->
+                        <i class="fa-solid fa-location-dot fa-lg"  id="expert-loc1" style="color: #c20303;"></i>
+                    </div>
+                    <div class="pin expert-loc2" style="top: 45%; left: 50%;"> <!--Riyadh pin-->
+                        <i class="fa-solid fa-location-dot fa-lg"  id="expert-loc2" style="color: #c20303;"></i>
+                    </div>
+                    <div class="pin expert-loc3" style="top: 35%; left: 64%;"> <!--Dammam pin-->
+                        <i class="fa-solid fa-location-dot fa-lg"  id="expert-loc3" style="color: #c20303;"></i>
+                    </div>
+                </div>
+            </div>
+            <button class="continue-btn" id="continueBtn" onclick="continueToNext()">Continue</button>
+        </div>
+    </div> 
+    
+    <script src="script.js"></script>
+</body>
+</html>
