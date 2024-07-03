@@ -1,5 +1,5 @@
 ![banner](https://github.com/Farah-Aljarboa/Online-Learning/assets/120282555/831f74e3-c238-4e37-9b8b-ed80b4c4b3e3)
-# 🌐 Online Learning Platform
+# 🌐 Overview
 
 This project is an online learning platform designed to provide an interactive and engaging learning experience. It features a sidebar with a course menu, video content, quizzes, a custom alert system, and an interactive map with location pins. The layout is responsive, ensuring usability across various devices.
 
