@@ -169,28 +169,13 @@ function submitQuiz() {
 
     if (selectedOption && selectedOption.value === correctAnswer) {
         showAlert("✅ Correct Answer! ");
-    } else {
+    } else if(selectedOption && selectedOption.value !== correctAnswer ){
         showAlert("❌ Incorrect, please try again.");
     }
+    else{
+        showAlert("⚠️ Please choose an option !");
+    }
 }
-
-// to ensure the user chose option before click on submit button
-document.addEventListener('DOMContentLoaded', (event) => {
-    const quizForm = document.getElementById('quizForm');
-    const submitButton = document.getElementById('submitButton');
-
-    quizForm.addEventListener('change', () => {
-        const selectedOption = quizForm.querySelector('input[name="option"]:checked');
-        if (selectedOption) {
-            submitButton.disabled = false;
-            submitButton.classList.add('enabled');
-        } else {
-            submitButton.disabled = true;
-            submitButton.classList.remove('enabled');
-        }
-    });
-});
-
 
 // Function to show alert about the quiz's answer
 function showAlert(message) {

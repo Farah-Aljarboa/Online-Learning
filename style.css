@@ -223,12 +223,11 @@ input[type="radio"]{
     border-radius: 30px;
     color: #ffffff;
     border: none;
-    background-color: grey;
-    cursor: not-allowed;
+    background-color: #06b139;
 }
 
-#submitButton.enabled {
-    background-color: #06b139;
+#submitButton:hover {
+    background-color: #036320;
     cursor: pointer;
 }
 
